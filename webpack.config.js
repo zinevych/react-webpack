@@ -4,7 +4,7 @@ const NODE_ENV = process.env.NODE_ENV || 'development';
 const webpack = require('webpack');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: __dirname + '/frontend/js/index',
   output: {
     path: __dirname + "/build",
     filename: 'bundle.js'
@@ -27,11 +27,11 @@ module.exports = {
     extensions: ['', '.js']
   },
   module: {
-    loaders: [{
-      test: /\.es6\.js$/,
-      loader: "babel"
-
-    },
+    loaders: [
+      {
+        test: /\.es6\.js$/,
+        loader: "babel"
+      },
       {
         test: /\.jsx?$/,
         loader: 'babel'
@@ -40,6 +40,12 @@ module.exports = {
         context: './build',
         test: /\.html$/,
         loader: 'file?name=[name].[ext]'
-      }]
+      },
+      {
+        context: './build',
+        test: /\.css/,
+        loader: 'style!css'
+      }
+    ]
   }
 };
