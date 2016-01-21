@@ -1,9 +1,9 @@
 import React from 'react';
-import LoginStore from '../stores/LoginStore';
+//import LoginStore from '../stores/LoginStore';
 //import RouterStore from '../stores/RouterStore';
 //import LoginActionCreators from '../actions/LoginActionCreators';
 import { Route, RouteHandler, Link } from 'react-router';
-//import router from '../router';
+import router from '../router';
 
 export default class App extends React.Component {
   constructor() {
@@ -12,8 +12,6 @@ export default class App extends React.Component {
   }
 
   render() {
-    //console.log(transition);
-    console.log(this.context.history);
     return (
       <div className="container">
         <nav className="navbar navbar-default">
@@ -22,8 +20,10 @@ export default class App extends React.Component {
           </div>
           {this.headerItems}
         </nav>
-      </div>
-    );
+        <div className="content">
+              {this.props.children}
+        </div>
+      </div>);
   }
 
   get headerItems() {
@@ -34,7 +34,7 @@ export default class App extends React.Component {
             <Link to="login">Login</Link>
           </li>
           <li>
-            <Link to="signup">Signup</Link>
+            <Link to="/signup">Signup</Link>
           </li>
         </ul>)
     } else {

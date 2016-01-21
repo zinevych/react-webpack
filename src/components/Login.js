@@ -1,4 +1,6 @@
 import React from 'react';
+import { Route, RouteHandler, Link } from 'react-router';
+import router from '../router';
 //import LoginActionCreators from '../actions/LoginActionCreators';
 
 export default class Login extends React.Component {
@@ -16,6 +18,9 @@ export default class Login extends React.Component {
   }
 
   render() {
-    return ''
+    console.log('asasasas');
+    return (<div>
+        <h1>App</h1>
+        </div>);
   }
 }
