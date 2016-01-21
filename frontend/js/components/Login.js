@@ -18,9 +18,17 @@ export default class Login extends React.Component {
   }
 
   render() {
-    console.log('asasasas');
+
     return (<div>
-        <h1>App</h1>
+        <form>
+        <h1>Please login to use this application</h1>
+        <div className="email">
+          <label>Email: </label>
+        </div>
+        <div className="password">
+          <label>Password: </label>
+        </div>
+        </form>
         </div>);
   }
 }
