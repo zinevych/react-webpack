@@ -1,4 +1,5 @@
 import React from 'react';
+import Dispatcher from '../dispatcher/AppDispatcher';
 
 export default class LoginActionCreator extends React.Component {
   constructor() {

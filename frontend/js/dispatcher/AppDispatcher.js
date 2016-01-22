@@ -1,3 +1,3 @@
-/**
- * Created by Aleks on 1/20/2016.
- */
+import { Dispatcher } from 'flux';
+const dispatcher = new Dispatcher();
+export default dispatcher;
