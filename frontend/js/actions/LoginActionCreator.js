@@ -7,7 +7,10 @@ export default class LoginActionCreator extends React.Component {
   }
 
   static loginUser(user, password) {
-    console.log(user);
-    console.log(password);
+    Dispatcher.dispatch({
+      actionType: 'loginUser',
+      user: user,
+      password: password
+    });
   }
 }
