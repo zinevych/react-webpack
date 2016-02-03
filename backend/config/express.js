@@ -1,14 +1,15 @@
 var express = require('express');
 var glob = require('glob');
-//
+var mongoose = require('mongoose');
 //var favicon = require('serve-favicon');
 //var logger = require('morgan');
 //var cookieParser = require('cookie-parser');
-//var bodyParser = require('body-parser');
+var bodyParser = require('body-parser');
 //var compress = require('compression');
 //var methodOverride = require('method-override');
 
 module.exports = function(app, config) {
+  mongoose.connect(config.db);
   //var env = process.env.NODE_ENV || 'development';
   //app.locals.ENV = env;
   //app.locals.ENV_DEVELOPMENT = env == 'development';
@@ -20,10 +21,10 @@ module.exports = function(app, config) {
   //
   //// app.use(favicon(config.root + '/public/img/favicon.ico'));
   //app.use(logger('dev'));
-  //app.use(bodyParser.json());
-  //app.use(bodyParser.urlencoded({
-  //  extended: true
-  //}));
+  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({
+    extended: true
+  }));
   //app.use(cookieParser());
   //app.use(compress());
   ////app.use(express.static(config.root + '/public'));
@@ -31,9 +32,8 @@ module.exports = function(app, config) {
   //app.use(methodOverride());
 
   var controllers = glob.sync(config.root + '/controllers/*.js');
-  console.log(config.root)
-  controllers.forEach(function (controller) {
 
+  controllers.forEach(function (controller) {
     require(controller)(app);
   });
 

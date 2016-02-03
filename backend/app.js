@@ -4,6 +4,7 @@
 const express = require('express');
 const path = require('path');
 const config = require('./config/config');
+
 // Constants
 const PORT = 3000;
 
@@ -16,6 +17,7 @@ app.get('/', function (req, res) {
   res.sendfile(path.resolve('build/index.html'));
 });
 require('./config/express')(app, config);
+app.set('secretKey', config.app.secret);
 
 app.listen(PORT);
 console.log('Running on http://localhost:' + PORT);

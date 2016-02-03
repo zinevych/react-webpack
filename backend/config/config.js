@@ -6,10 +6,11 @@ var config = {
   development: {
     root: rootPath,
     app: {
-      name: 'setYourGoal'
+      secret: 'sec1',
+      name: 'reactWebpack'
     },
     port: 3000,
-    db: 'mongodb://localhost/setYourGoalDB'
+    db: 'mongodb://localhost/reactWebpackDB'
   },
 
   test: {
