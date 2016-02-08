@@ -42,9 +42,9 @@ module.exports = {
         loader: 'file?name=[name].[ext]'
       },
       {
-        context: './build',
+        //context: './build',
         test: /\.css/,
-        loader: 'style!css'
+        loader: 'style!css?localIdentName=[name]__[local]___[hash:base64:5]'
       }
     ]
   }

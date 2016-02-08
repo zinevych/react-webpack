@@ -1,22 +1,14 @@
 import React from 'react';
 //import LoginStore from '../stores/LoginStore';
-import ListStore from '../stores/ListStore';
 //import RouterStore from '../stores/RouterStore';
 //import LoginActionCreators from '../actions/LoginActionCreators';
-import ListComponent from '../components/List';
+import ListContainer from './List/ListContainer.js';
 import { Route, RouteHandler, Link } from 'react-router';
 import router from '../router';
 
 export default class App extends React.Component {
   constructor() {
     super();
-    this.state = {};
-    this.state.items = ListStore.getListItems();
-    this._onChange = this._onChange.bind(this);
-  }
-
-  componentDidMount() {
-    ListStore.addChangeListener(this._onChange);
   }
 
 //  componentWillUnmount() {
@@ -62,15 +54,7 @@ export default class App extends React.Component {
 //    }
 //  }
 
-  _onChange() {
-    this.setState({
-      items: ListStore.getListItems()
-    });
-  }
-
   render() {
-    return (
-        <ListComponent data={this.state.items}/>
-        )
+    return (<ListContainer/>);
   }
 }
