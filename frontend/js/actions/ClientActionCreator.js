@@ -7,7 +7,7 @@ export default class ModalActionCreator extends React.Component {
     super();
   }
 
-  static createEntity(obj) {
+  static createClient(obj) {
     console.log($);
     $.ajax({
       url: '/test/createEntity',
