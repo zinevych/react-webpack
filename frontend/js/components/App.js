@@ -3,6 +3,7 @@ import React from 'react';
 //import RouterStore from '../stores/RouterStore';
 //import LoginActionCreators from '../actions/LoginActionCreators';
 import ListContainer from './List/ListContainer.js';
+import ModalContainer from './Modal/ModalContainer.js';
 import { Route, RouteHandler, Link } from 'react-router';
 import router from '../router';
 
@@ -55,6 +56,9 @@ export default class App extends React.Component {
 //  }
 
   render() {
-    return (<ListContainer/>);
+    return (<div>
+        <ListContainer/>
+        <ModalContainer/>
+      </div>);
   }
 }
