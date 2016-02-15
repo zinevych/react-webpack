@@ -6,7 +6,7 @@ module.exports = function (app) {
   app.use('/test', router);
 };
 
-router.get('/post', function(req, res) {
+router.get('/createEntity', function(req, res) {
 
 });
 
