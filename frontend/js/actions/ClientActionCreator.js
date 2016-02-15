@@ -10,7 +10,7 @@ export default class ModalActionCreator extends React.Component {
   static createClient(obj) {
     console.log($);
     $.ajax({
-      url: '/test/createEntity',
+      url: '/client/create',
       dataType: 'json',
       cache: false,
       success: function(data) {
@@ -20,8 +20,9 @@ export default class ModalActionCreator extends React.Component {
         console.error(this.props.url, status, err.toString());
       }.bind(this)
     });
+    
     Dispatcher.dispatch({
-      actionType: 'createEntity'
+      actionType: 'create'
     });
   }
 }

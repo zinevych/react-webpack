@@ -3,10 +3,10 @@ var express = require('express'),
     User = require('../models/user');
 
 module.exports = function (app) {
-  app.use('/test', router);
+  app.use('/client', router);
 };
 
-router.get('/createEntity', function(req, res) {
+router.get('/create', function(req, res) {
 
 });
 
