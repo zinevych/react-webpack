@@ -5,6 +5,8 @@ import Form from 'react-jsonschema-form';
 import schema from '../../../../json-schemas/schema/form.js';
 import uiSchema from '../../../../json-schemas/ui-schema/form.js';
 
+import ClientActionCreator from '../../actions/ClientActionCreator.js';
+
 const formData = {
   title: "First task",
   done: true
@@ -43,7 +45,7 @@ export default class ModalContainer extends React.Component {
   }
 
   submit() {
-
+    ClientActionCreator.createClient();
   }
 
   render() {

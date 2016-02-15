@@ -20,7 +20,7 @@ export default class ModalActionCreator extends React.Component {
         console.error(this.props.url, status, err.toString());
       }.bind(this)
     });
-    
+
     Dispatcher.dispatch({
       actionType: 'create'
     });
