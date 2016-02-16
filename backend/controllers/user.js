@@ -1,6 +1,7 @@
 var express = require('express'),
   router = express.Router(),
-  User = require('../models/user');
+  User = require('../models/user'),
+    jwtCheck = require('../middlewares/jwtCheck');
 
 module.exports = function (app) {
   app.use('/users', router);
@@ -24,7 +25,7 @@ router.get('/setup', function(req, res) {
   });
 });
 
-router.get('/all', function (req, res, next) {
+router.get('/all', jwtCheck, function (req, res, next) {
   User.find({}, function(err, users) {
     res.json(users);
   });

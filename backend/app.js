@@ -5,7 +5,6 @@ const express = require('express');
 const path = require('path');
 const config = require('./config/config');
 const fallback = require('express-history-api-fallback');
-const jwt = require('jsonwebtoken');
 
 // Constants
 const PORT = 3000;
