@@ -13,6 +13,7 @@
     "body-parser": "^1.14.2",
     "css-loader": "^0.23.1",
     "express": "^4.13.4",
+    "express-history-api-fallback": "^2.0.0",
     "file-loader": "^0.8.5",
     "flux": "^2.1.1",
     "glob": "^6.0.4",

@@ -8,7 +8,8 @@ import Login from './components/Login.js';
 render((
   <Router history={history}>
     <Route path="/" component={App}>
-      <Route name="login" path="/login" component={Login}/>
+
     </Route>
+    <Route name="login" path="/login" component={Login}/>
   </Router>
 ), document.getElementById('container'));

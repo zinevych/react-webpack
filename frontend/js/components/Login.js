@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, RouteHandler, Link } from 'react-router';
 import router from '../router';
 import LoginActionCreator from '../actions/LoginActionCreator';
+import {Input, Button} from 'react-bootstrap';
 
 export default class Login extends React.Component {
   constructor() {
@@ -23,23 +24,31 @@ export default class Login extends React.Component {
 
   login (e) {
     e.preventDefault();
-    console.log(LoginActionCreator)
     LoginActionCreator.loginUser(this.state.user, this.state.password);
   }
 
   render() {
     return (<div>
-        <form onSubmit={this.login}>
-        <h1>Please login to use this application</h1>
-        <div className="email">
-          <label>Email: </label>
-          <input value={this.state.user} name="user" onChange={this.handleChange}/>
-        </div>
-        <div className="password">
-          <label>Password: </label>
-          <input type="password" name="password" value={this.state.password} onChange={this.handleChange}/>
-        </div>
-        <button>OK</button>
+        <form onSubmit={this.login} className="form-horizontal">
+        <h2>Please sign in</h2>
+          <Input value={this.state.user}
+                 type="text" label="User name: "
+                 name="user"
+                 placeholder="Enter user name"
+                 onChange={this.handleChange}
+                 labelClassName="col-xs-2"
+                 wrapperClassName="col-xs-4" />
+
+          <Input type="password"
+                 name="password"
+                 label="Password: "
+                 placeholder="Enter password"
+                 value={this.state.password}
+                 onChange={this.handleChange}
+                 labelClassName="col-xs-2"
+                 wrapperClassName="col-xs-4"/>
+
+          <Button type="submit" bsStyle="primary">OK</Button>
         </form>
         </div>);
   }
