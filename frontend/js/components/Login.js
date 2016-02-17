@@ -1,7 +1,8 @@
 import React from 'react';
 import { Route, RouteHandler, Link } from 'react-router';
 import router from '../router';
-import LoginActionCreator from '../actions/LoginActionCreator';
+import LoginActionCreator from '../actions/AuthActionCreator';
+import AuthStore from '../stores/AuthStore';
 import {Input, Button} from 'react-bootstrap';
 
 export default class Login extends React.Component {

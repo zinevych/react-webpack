@@ -1,15 +1,9 @@
 import React from 'react';
+import AuthComponent from './Auth'
 
-export default class Home extends React.Component{
-  constructor() {
-    super();
-  }
+export default AuthComponent(class Home extends React.Component {
   render() {
-    return (
-      <div>
-        <h1> {this.props.user ? 'Hello ' + this.props.user.username : ''}</h1>
-        <Link to="/private">Private page</Link>
-      </div>
-    );
+    console.log('aaaaa');
+    return (<h1>Hello {this.props.user ? this.props.user.username : ''}</h1>);
   }
-}
+});

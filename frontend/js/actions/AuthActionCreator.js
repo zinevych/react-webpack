@@ -18,11 +18,11 @@ export default class LoginActionCreator extends React.Component {
       method: 'POST',
       cache: false,
       success: function(data) {
-        //Dispatcher.dispatch({
-        //  actionType: 'loginUser',
-        //  user: user,
-        //  password: password
-        //});
+        localStorage.setItem('jwt', data.token)
+        Dispatcher.dispatch({
+          actionType: 'AUTH_SUCCESS',
+          data: data
+        });
         //this.setState({data: data});
       }.bind(this),
       error: function(xhr, status, err) {
