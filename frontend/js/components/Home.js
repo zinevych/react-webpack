@@ -3,7 +3,6 @@ import AuthComponent from './Auth'
 
 export default AuthComponent(class Home extends React.Component {
   render() {
-    console.log('aaaaa');
     return (<h1>Hello {this.props.user ? this.props.user.username : ''}</h1>);
   }
 });

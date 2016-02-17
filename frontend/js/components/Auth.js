@@ -29,6 +29,7 @@ export default (ComposedComponent) => {
     }
 
     _onChange() {
+      console.log('a2');
       this.setState(this._getLoginState());
     }
 
@@ -37,7 +38,6 @@ export default (ComposedComponent) => {
     }
 
     render() {
-      console.log('asasas');
       return (
           <ComposedComponent
               {...this.props}

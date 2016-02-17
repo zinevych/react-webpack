@@ -5,15 +5,38 @@ import React from 'react';
 import ListContainer from './List/ListContainer.js';
 import ModalContainer from './Modal/ModalContainer.js';
 import { Route, RouteHandler, Link } from 'react-router';
+import AuthStore from '../stores/AuthStore';
 import router from '../router';
 
 export default class App extends React.Component {
   constructor() {
     super();
+    this.state = this._getLoginState();
   }
 
   componentWillUnmount() {
     //TodoStore.removeChangeListener(this._onChange);
+  }
+
+
+  _getLoginState() {
+    return {
+      userLoggedIn: AuthStore.isLoggedIn()
+    };
+  }
+
+  componentDidMount() {
+    this.changeListener = this._onChange.bind(this);
+    AuthStore.addChangeListener(this.changeListener);
+  }
+
+  _onChange() {
+    console.log('a1');
+    this.setState(this._getLoginState());
+  }
+
+  componentWillUnmount() {
+    //AuthStore.removeChangeListener(this.changeListener);
   }
 
   render() {

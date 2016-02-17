@@ -3,6 +3,8 @@ import Dispatcher from '../dispatcher/AppDispatcher';
 import { EventEmitter } from 'events';
 import jwt_decode from 'jwt-decode';
 
+const CHANGE_EVENT = 'change';
+
 class AuthStore extends EventEmitter {
   constructor() {
     super();
