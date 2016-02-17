@@ -7,7 +7,7 @@ export default class LoginActionCreator extends React.Component {
     super();
   }
 
-  static loginUser(user, password) {
+  static auth(user, password) {
     $.ajax({
       url: '/security/auth',
       dataType: 'json',
@@ -29,5 +29,23 @@ export default class LoginActionCreator extends React.Component {
         console.error(this.props.url, status, err.toString());
       }.bind(this)
     });
+  }
+
+  static loginUser(jwt) {
+    var savedJwt = localStorage.getItem('jwt');
+
+    Dispatcher.dispatch({
+      actionType: 'AUTH_SUCCESS',
+      data: {
+        token: jwt
+      }
+    });
+
+    if (savedJwt !== jwt) {
+      //var nextPath = RouterContainer.get().getCurrentQuery().nextPath || '/';
+      //
+      //RouterContainer.get().transitionTo(nextPath);
+      localStorage.setItem('jwt', jwt);
+    }
   }
 }

@@ -16,6 +16,7 @@ export default (ComposedComponent) => {
     }
 
     _getLoginState() {
+      console.log(AuthStore.user);
       return {
         userLoggedIn: AuthStore.isLoggedIn(),
         user: AuthStore.user,

@@ -27,6 +27,10 @@ class AuthStore extends EventEmitter {
     return this._jwt;
   }
 
+  get user() {
+    return this._user;
+  }
+
   isLoggedIn() {
     return !!this._user;
   }

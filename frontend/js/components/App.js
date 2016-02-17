@@ -14,10 +14,6 @@ export default class App extends React.Component {
     this.state = this._getLoginState();
   }
 
-  componentWillUnmount() {
-    //TodoStore.removeChangeListener(this._onChange);
-  }
-
 
   _getLoginState() {
     return {

@@ -25,7 +25,7 @@ export default class Login extends React.Component {
 
   login (e) {
     e.preventDefault();
-    LoginActionCreator.loginUser(this.state.user, this.state.password);
+    LoginActionCreator.auth(this.state.user, this.state.password);
   }
 
   render() {
