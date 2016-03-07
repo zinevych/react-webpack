@@ -1,5 +1,5 @@
 import React from 'react';
-import ListActionCreator from '../../actions/ListActionCreator';
+//import ListActionCreator from '../../actions/ListActionCreator';
 import styles from './styles.css';
 
 export default class ListComponent extends React.Component {
@@ -8,7 +8,7 @@ export default class ListComponent extends React.Component {
   }
 
   handleClick(index) {
-    ListActionCreator.deleteItemByIndex(index);
+    //ListActionCreator.deleteItemByIndex(index);
   }
 
   render() {

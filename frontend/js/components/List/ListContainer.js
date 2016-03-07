@@ -1,6 +1,6 @@
 import React from 'react';
-import ListActionCreator from '../../actions/ListActionCreator';
-import ListStore from '../../stores/ListStore';
+//import ListActionCreator from '../../actions/ListActionCreator';
+//import ListStore from '../../stores/ListStore';
 import ListComponent from './List.js';
 
 export default class ListContainer extends React.Component {
@@ -12,7 +12,7 @@ export default class ListContainer extends React.Component {
   }
 
   componentDidMount() {
-    ListStore.addChangeListener(this._onChange);
+    //ListStore.addChangeListener(this._onChange);
   }
 
   _onChange() {

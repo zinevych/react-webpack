@@ -4,19 +4,12 @@ import AuthStore from '../stores/AuthStore';
 export default (ComposedComponent) => {
   return class AuthComponent extends React.Component {
 
-    //static willTransitionTo(transition) {
-    //  if (!AuthStore.isLoggedIn()) {
-    //    transition.redirect('/login', {}, {'nextPath' : transition.path});
-    //  }
-    //}
-
     constructor() {
       super();
       this.state = this._getLoginState();
     }
 
     _getLoginState() {
-      console.log(AuthStore.user);
       return {
         userLoggedIn: AuthStore.isLoggedIn(),
         user: AuthStore.user,
@@ -30,7 +23,6 @@ export default (ComposedComponent) => {
     }
 
     _onChange() {
-      console.log('a2');
       this.setState(this._getLoginState());
     }
 
