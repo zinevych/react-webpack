@@ -7,7 +7,7 @@ export default class LoginActionCreator extends React.Component {
     super();
   }
 
-  static auth(user, password) {
+  static auth(user, password, cb) {
     $.ajax({
       url: '/security/auth',
       dataType: 'json',
@@ -23,6 +23,7 @@ export default class LoginActionCreator extends React.Component {
           actionType: 'AUTH_SUCCESS',
           data: data
         });
+        cb(true);
         //this.setState({data: data});
       }.bind(this),
       error: function(xhr, status, err) {

@@ -2,7 +2,6 @@ import React from 'react';
 //import LoginStore from '../stores/LoginStore';
 //import RouterStore from '../stores/RouterStore';
 //import LoginActionCreators from '../actions/LoginActionCreators';
-import ListContainer from './List/ListContainer.js';
 import ModalContainer from './Modal/ModalContainer.js';
 import { Route, RouteHandler, Link } from 'react-router';
 import AuthStore from '../stores/AuthStore';

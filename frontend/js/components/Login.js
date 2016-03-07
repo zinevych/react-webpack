@@ -6,6 +6,10 @@ import AuthStore from '../stores/AuthStore';
 import {Input, Button} from 'react-bootstrap';
 
 export default class Login extends React.Component {
+  static contextTypes = {
+    router: React.PropTypes.object.isRequired
+  };
+
   constructor() {
     super();
     this.handleChange = this.handleChange.bind(this);
@@ -25,7 +29,21 @@ export default class Login extends React.Component {
 
   login (e) {
     e.preventDefault();
-    LoginActionCreator.auth(this.state.user, this.state.password);
+    LoginActionCreator.auth(this.state.user, this.state.password, (loggedIn) => {
+      console.log('callback');
+      console.log(this);
+
+      if (!loggedIn)
+        return this.setState({ error: true })
+
+      const { location } = this.props;
+
+      if (location.state && location.state.nextPathname) {
+        this.context.router.replace(location.state.nextPathname)
+      } else {
+        this.context.router.replace('/')
+      }
+    });
   }
 
   render() {
