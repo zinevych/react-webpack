@@ -26,4 +26,4 @@ render((
       <Route name="login" path="/login" component={Login}/>
     </Route>
   </Router>
-), document.getElementById('container'));
+), document.getElementById('app'));

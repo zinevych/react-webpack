@@ -41,11 +41,13 @@ module.exports = {
       {
         context: './build',
         test: /\.html$/,
+        exclude: /node_modules/,
         loader: 'file?name=[name].[ext]'
       },
       {
         //context: './build',
         test: /\.css/,
+        exclude: /node_modules/,
         loader: 'style!css?localIdentName=[name]__[local]___[hash:base64:5]'
       }
     ]
