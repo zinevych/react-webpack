@@ -7,7 +7,6 @@ import {Input, Button} from 'react-bootstrap';
 
 export default class Login extends React.Component {
   static contextTypes = {
-    location: React.PropTypes.object,
     history: React.PropTypes.object
   };
 
