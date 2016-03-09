@@ -1,10 +1,10 @@
 import React from 'react';
 import AuthComponent from './Auth';
+import Dashboard from './Dashboard';
 import { Route, RouteHandler, Link } from 'react-router';
 
 export default AuthComponent(class Home extends React.Component {
   get headerItems() {
-    //if (!this.state.userLoggedIn) {
     if (true) {
       return (
           <ul className="nav navbar-nav navbar-right">
@@ -30,7 +30,7 @@ export default AuthComponent(class Home extends React.Component {
 
   render() {
     return (
-        <div className="container">
+        <div className="home">
           <nav className="navbar navbar-default">
             <div className="navbar-header">
               <a className="navbar-brand" href="/">Sandbox</a>
@@ -38,7 +38,7 @@ export default AuthComponent(class Home extends React.Component {
             {this.headerItems}
           </nav>
           <div className="content">
-            {this.props.children}
+            <Dashboard />
           </div>
         </div>);
   }

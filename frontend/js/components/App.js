@@ -5,27 +5,21 @@ import router from '../router';
 export default class App extends React.Component {
   constructor() {
     super();
-    this.state = this._getLoginState();
+    //this.state = this._getLoginState();
   }
-
-  _getLoginState() {
-    return {
-      userLoggedIn: AuthStore.isLoggedIn()
-    };
-  }
-
-  componentDidMount() {
-    this.changeListener = this._onChange.bind(this);
-    AuthStore.addChangeListener(this.changeListener);
-  }
-
-  _onChange() {
-    this.setState(this._getLoginState());
-  }
-
-  componentWillUnmount() {
-    //AuthStore.removeChangeListener(this.changeListener);
-  }
+  //
+  //componentDidMount() {
+  //  this.changeListener = this._onChange.bind(this);
+  //  AuthStore.addChangeListener(this.changeListener);
+  //}
+  //
+  //_onChange() {
+  //  this.setState(this._getLoginState());
+  //}
+  //
+  //componentWillUnmount() {
+  //  //AuthStore.removeChangeListener(this.changeListener);
+  //}
 
   render() {
     return (
