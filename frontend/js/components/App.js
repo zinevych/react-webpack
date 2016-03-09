@@ -13,7 +13,6 @@ export default class App extends React.Component {
     this.state = this._getLoginState();
   }
 
-
   _getLoginState() {
     return {
       userLoggedIn: AuthStore.isLoggedIn()

@@ -7,13 +7,15 @@ import {Input, Button} from 'react-bootstrap';
 
 export default class Login extends React.Component {
   static contextTypes = {
-    router: React.PropTypes.object.isRequired
+    location: React.PropTypes.object,
+    history: React.PropTypes.object
   };
 
   constructor() {
     super();
     this.handleChange = this.handleChange.bind(this);
     this.login = this.login.bind(this);
+    this._onChange = this._onChange.bind(this);
 
     this.state = {
       user: '',
@@ -27,22 +29,31 @@ export default class Login extends React.Component {
     this.setState(s);
   }
 
+  _onChange() {
+    this.context.history.pushState(null, '/');
+  }
+
+  componentDidMount() {
+    this.changeListener = this._onChange.bind(this);
+    AuthStore.addChangeListener(this.changeListener);
+  }
+
   login (e) {
     e.preventDefault();
     LoginActionCreator.auth(this.state.user, this.state.password, (loggedIn) => {
       console.log('callback');
       console.log(this);
 
-      if (!loggedIn)
-        return this.setState({ error: true })
-
-      const { location } = this.props;
-
-      if (location.state && location.state.nextPathname) {
-        this.context.router.replace(location.state.nextPathname)
-      } else {
-        this.context.router.replace('/')
-      }
+      //if (!loggedIn)
+      //  return this.setState({ error: true })
+      //
+      //const { location } = this.props;
+      //
+      //if (location.state && location.state.nextPathname) {
+      //  this.context.router.replace(location.state.nextPathname)
+      //} else {
+      //  this.context.router.replace('/')
+      //}
     });
   }
 

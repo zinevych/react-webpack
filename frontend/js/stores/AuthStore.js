@@ -13,6 +13,7 @@ class AuthStore extends EventEmitter {
   }
 
   addChangeListener(cb) {
+
     this.on(CHANGE_EVENT, cb);
   }
 
