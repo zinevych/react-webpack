@@ -1,5 +1,5 @@
-body {
-
+html, body, #app, .home, .content, .dashboard {
+  height: 100%;
 }
 
 #header {
@@ -24,4 +24,29 @@ body {
 
 .view {
 
+}
+
+.dashboard > .sidebar, .dashboard > .content {
+  display: inline;
+  float: left;
+}
+
+.dashboard > .sidebar {
+  background-color: #f8f8f8;
+  border: 1px solid red;
+  /*border-style: solid;*/
+  /*border-color: red;*/
+  height: 100%;
+  width: 300px;
+}
+
+
+
+.sidebar-item {
+  height: 40px;
+}
+
+.sidebar-item:hover {
+  height: 40px;
+  background-color: red;
 }
